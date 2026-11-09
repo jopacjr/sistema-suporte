@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Meus Chamados</h2>
+
+  <div *ngIf="chamados.length === 0" class="empty-state">
+    <p>Nenhum chamado registrado até o momento.</p>
+  </div>
+
+  <div *ngIf="chamados.length > 0" class="grid-chamados">
+    <div *ngFor="let c of chamados" class="card-chamado">
+      <div class="card-header">
+        <span class="badge">{{ c.categoria }}</span>
+        <span class="status">{{ c.status }}</span>
+      </div>
+      <h3>{{ c.assunto }}</h3>
+      <p>{{ c.descricao }}</p>
+      <div class="card-footer">
+        <small>Aberto em: {{ c.dataCriacao }}</small>
+        <small>Protocolo: #{{ c.id }}</small>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+.form-card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.lgpd-banner {
+  display: flex;
+  gap: 12px;
+  background-color: #eef7ff;
+  border-left: 4px solid #0066cc;
+  padding: 12px;
+  margin: 16px 0;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #1a365d;
+}
+
+.lgpd-banner p {
+  margin: 4px 0 0 0;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #004999;
+}

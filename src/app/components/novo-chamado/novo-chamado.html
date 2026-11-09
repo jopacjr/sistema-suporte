@@ -1,0 +1,35 @@
+<div class="form-card">
+  <h2>Abrir Novo Chamado</h2>
+
+  <form (ngSubmit)="salvarChamado()">
+    <div class="form-group">
+      <label for="assunto">Assunto *</label>
+      <input type="text" id="assunto" [(ngModel)]="assunto" name="assunto" required />
+    </div>
+
+    <div class="form-group">
+      <label for="categoria">Categoria</label>
+      <select id="categoria" [(ngModel)]="categoria" name="categoria">
+        <option value="Suporte Técnico">Suporte Técnico</option>
+        <option value="Dúvida">Dúvida</option>
+        <option value="Privacidade/LGPD">Solicitação LGPD</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="descricao">Descrição do Problema *</label>
+      <textarea id="descricao" [(ngModel)]="descricao" name="descricao" rows="4" required></textarea>
+    </div>
+
+    <!-- Bloco de Privacidade LGPD -->
+    <div class="lgpd-banner">
+      <span class="icon">🔒</span>
+      <div>
+        <strong>Aviso de Privacidade (LGPD):</strong>
+        <p>Os dados coletados neste formulário têm a <em>finalidade exclusiva</em> de atender à sua solicitação de suporte. Não solicitamos dados sensíveis e guardamos apenas o mínimo necessário (Princípio da Minimização - Art. 6º, III).</p>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-primary">Enviar Solicitação</button>
+  </form>
+</div>

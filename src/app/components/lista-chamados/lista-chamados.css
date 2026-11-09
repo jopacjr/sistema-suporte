@@ -1,0 +1,56 @@
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #6c757d;
+}
+
+.grid-chamados {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-chamado {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.badge {
+  background: #e2e8f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.status {
+  color: #2b6cb0;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  color: #718096;
+  font-size: 12px;
+  border-top: 1px solid #edf2f7;
+  padding-top: 8px;
+}
