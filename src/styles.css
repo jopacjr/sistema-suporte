@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.navbar a {
+  color: #cbd5e1;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.navbar a.btn-novo {
+  background-color: #2563eb;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.card-container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.lgpd-box {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
