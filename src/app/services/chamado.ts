@@ -9,13 +9,13 @@ export class ChamadoService {
 
   constructor() {}
 
-  // Retorna todos os chamados salvos
+  // Retorna os chamados salvos no localStorage
   obterChamados(): Chamado[] {
     const dados = localStorage.getItem(this.storageKey);
     return dados ? JSON.parse(dados) : [];
   }
 
-  // Adiciona um novo chamado garantindo minimização e criação de ID
+  // Adiciona um novo chamado salvando no localStorage
   adicionarChamado(chamado: Omit<Chamado, 'id' | 'dataCriacao' | 'status'>): void {
     const chamados = this.obterChamados();
     const novoChamado: Chamado = {
