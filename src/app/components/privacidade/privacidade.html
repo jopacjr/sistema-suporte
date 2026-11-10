@@ -1,0 +1,22 @@
+<div class="card-container">
+  <h2>Central de Privacidade e Direitos LGPD</h2>
+  <p>Titular dos dados: <strong>{{ emailUsuario }}</strong></p>
+
+  <div class="section-privacy">
+    <h3>Gestão de Consentimentos (Art. 7º)</h3>
+    <label class="toggle-group">
+      <input type="checkbox" [(ngModel)]="marketingConsent" />
+      <span>Autorizo envio de comunicações de suporte por e-mail</span>
+    </label>
+    <label class="toggle-group">
+      <input type="checkbox" [(ngModel)]="analyticsConsent" />
+      <span>Autorizo recolha de dados anónimos de desempenho</span>
+    </label>
+  </div>
+
+  <div class="section-privacy">
+    <h3>Seus Direitos (Art. 18 e 19)</h3>
+    <button class="btn" style="background: #0284c7;" (click)="exportarDados()">📥 Baixar Relatório de Dados (Portabilidade)</button>
+    <button class="btn" style="background: #dc2626; margin-top: 10px;" (click)="eliminarConta()">🔥 Solicitar Exclusão Definitiva da Conta</button>
+  </div>
+</div>

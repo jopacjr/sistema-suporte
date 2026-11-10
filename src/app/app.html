@@ -1,11 +1,14 @@
 <nav class="navbar">
-  <div class="logo">Sistema de Suporte</div>
+  <div class="logo">
+    <span>🛡️ Sistema de Suporte</span>
+    <button class="btn-tema" (click)="alternarTema()">{{ modoEscuro ? '☀️ Tema Claro' : '🌙 Tema Escuro' }}</button>
+  </div>
 
-  <!-- Exibido apenas quando o usuário estiver LOGADO -->
-  <div class="links" *ngIf="authService.estaLogado$ | async">
-    <a routerLink="/chamados">Meus Chamados</a>
+  <div class="links" *ngIf="!isTelaAuth()">
+    <a routerLink="/chamados">📋 Meus Chamados</a>
+    <a routerLink="/privacidade" class="btn-privacidade">🔒 Central LGPD</a>
     <a routerLink="/novo-chamado" class="btn-novo">+ Novo Chamado</a>
-    <a (click)="sair()" style="cursor: pointer;">Sair</a>
+    <a (click)="sair()" class="btn-sair" style="cursor: pointer;">🚪 Sair</a>
   </div>
 </nav>
 

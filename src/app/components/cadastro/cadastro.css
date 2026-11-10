@@ -1,0 +1,110 @@
+.card-container {
+  max-width: 480px;
+  margin: 40px auto;
+  background: var(--bg-card);
+  color: var(--text-main);
+  padding: 36px 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.card-container h2 {
+  margin: 0 0 24px 0;
+  color: var(--text-main);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Caixa LGPD Adaptável ao Tema */
+.lgpd-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: var(--lgpd-bg);
+  border: 1px solid var(--lgpd-border);
+  padding: 14px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.lgpd-box input[type="checkbox"] {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.lgpd-box label {
+  font-size: 0.825rem;
+  color: var(--lgpd-text);
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+}
+
+.card-container p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.card-container a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card-container a:hover {
+  text-decoration: underline;
+}

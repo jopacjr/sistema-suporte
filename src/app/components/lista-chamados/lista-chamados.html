@@ -1,12 +1,42 @@
 <div class="container">
-  <h2>Meus Chamados</h2>
-
-  <div *ngIf="chamados.length === 0" class="empty-state">
-    <p>Nenhum chamado registrado até o momento.</p>
+  
+  <!-- Banner / Widget da API de Status de Serviços (Pós-Login) -->
+  <div class="system-status-card">
+    <div class="status-info">
+      <span class="status-dot" [ngClass]="statusServidor"></span>
+      <div>
+        <strong>Status do Sistema & Infraestrutura:</strong>
+        <span *ngIf="statusServidor === 'online'"> Todos os servidores operando normalmente ({{ tempoRespostaMs }}ms)</span>
+        <span *ngIf="statusServidor === 'offline'"> Instabilidade detectada na rede</span>
+        <span *ngIf="statusServidor === 'verificando'"> Verificando conectividade...</span>
+      </div>
+    </div>
+    <button class="btn-refresh" (click)="verificarStatusServicos()">🔄 Testar Conexão</button>
   </div>
 
-  <div *ngIf="chamados.length > 0" class="grid-chamados">
-    <div *ngFor="let c of chamados" class="card-chamado">
+  <div class="header-section">
+    <h2>Meus Chamados</h2>
+    <button class="btn-deletar" style="background: #e2e8f0; color: #334155;" (click)="exportarLGPD()">
+      📥 Exportar Meus Dados (LGPD)
+    </button>
+  </div>
+
+  <!-- Barra de Filtros -->
+  <div class="filter-bar">
+    <input type="text" placeholder="🔍 Buscar por assunto ou categoria..." [(ngModel)]="termoBusca" class="search-input" />
+    <select [(ngModel)]="filtroStatus" class="select-status">
+      <option value="Todos">Todos os Status</option>
+      <option value="Aberto">Aberto</option>
+      <option value="Concluído">Concluído</option>
+    </select>
+  </div>
+
+  <div *ngIf="chamadosFiltrados.length === 0" class="empty-state">
+    <p>Nenhum chamado encontrado.</p>
+  </div>
+
+  <div *ngIf="chamadosFiltrados.length > 0" class="grid-chamados">
+    <div *ngFor="let c of chamadosFiltrados" class="card-chamado">
       <div class="card-header">
         <span class="badge">{{ c.categoria }}</span>
         <span class="status">{{ c.status }}</span>
@@ -14,8 +44,9 @@
       <h3>{{ c.assunto }}</h3>
       <p>{{ c.descricao }}</p>
       <div class="card-footer">
-        <small>Aberto em: {{ c.dataCriacao }}</small>
-        <small>Protocolo: #{{ c.id }}</small>
+        <span>Aberto em: {{ c.dataCriacao }}</span>
+        <span>Protocolo: #{{ c.id }}</span>
+        <button class="btn-deletar" (click)="excluir(c.id)">🗑️ Excluir</button>
       </div>
     </div>
   </div>

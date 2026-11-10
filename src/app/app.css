@@ -1,0 +1,64 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f172a;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Links comuns do menu: Meus Chamados e Central LGPD */
+.navbar a {
+  color: #cbd5e1 !important; /* Cor clara de alto contraste */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Efeito ao passar o mouse */
+.navbar a:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Botão em destaque: + Novo Chamado */
+.navbar a.btn-novo {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.navbar a.btn-novo:hover {
+  background-color: #1d4ed8 !important;
+}
+
+/* Botão Sair */
+.navbar a.btn-sair {
+  color: #ef4444 !important;
+}
+
+.navbar a.btn-sair:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171 !important;
+}

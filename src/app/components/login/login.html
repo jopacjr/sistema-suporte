@@ -1,5 +1,11 @@
 <div class="card-container">
   <h2>Login do Sistema</h2>
+  
+  <!-- Alerta visual de Erro -->
+  <div *ngIf="mensagemErro" class="alert-error">
+    {{ mensagemErro }}
+  </div>
+
   <form (ngSubmit)="entrar()">
     <div class="form-group">
       <label>E-mail</label>

@@ -15,22 +15,37 @@ export class NovoChamadoComponent {
   assunto: string = '';
   descricao: string = '';
   categoria: string = 'Suporte Técnico';
+  anexoBase64: string = '';
 
   constructor(private chamadoService: ChamadoService, private router: Router) {}
 
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.anexoBase64 = reader.result as string;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
   salvarChamado() {
     if (!this.assunto || !this.descricao) {
-      alert('Por favor, preencha todos os campos obrigatórios.');
+      alert('Por favor, preencha os campos obrigatórios.');
       return;
     }
+
+    const emailLogado = localStorage.getItem('usuario_email') || '';
 
     this.chamadoService.adicionarChamado({
       assunto: this.assunto,
       descricao: this.descricao,
-      categoria: this.categoria
-    });
+      categoria: this.categoria,
+      anexoBase64: this.anexoBase64
+    }, emailLogado);
 
-    alert('Chamado registrado com sucesso!');
+    alert('Chamado criado com sucesso!');
     this.router.navigate(['/chamados']);
   }
 }

@@ -21,13 +21,13 @@
       <textarea id="descricao" [(ngModel)]="descricao" name="descricao" rows="4" required></textarea>
     </div>
 
-    <!-- Bloco de Privacidade LGPD -->
+    <div class="form-group">
+      <label for="anexo">Anexar Print/Imagem (Opcional)</label>
+      <input type="file" id="anexo" (change)="onFileSelected($event)" accept="image/*" />
+    </div>
+
     <div class="lgpd-banner">
-      <span class="icon">🔒</span>
-      <div>
-        <strong>Aviso de Privacidade (LGPD):</strong>
-        <p>Os dados coletados neste formulário têm a <em>finalidade exclusiva</em> de atender à sua solicitação de suporte. Não solicitamos dados sensíveis e guardamos apenas o mínimo necessário (Princípio da Minimização - Art. 6º, III).</p>
-      </div>
+      <span>🔒 <strong>Privacidade LGPD:</strong> O anexo e a descrição serão armazenados com encriptação local única para resolução do seu atendimento.</span>
     </div>
 
     <button type="submit" class="btn-primary">Enviar Solicitação</button>

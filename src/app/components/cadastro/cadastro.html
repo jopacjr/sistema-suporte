@@ -2,18 +2,48 @@
   <h2>Criar Conta</h2>
   <form (ngSubmit)="cadastrar()">
     <div class="form-group">
-      <label>Nome Completo</label>
+      <label>Nome Completo *</label>
       <input type="text" [(ngModel)]="nome" name="nome" required />
     </div>
 
     <div class="form-group">
-      <label>E-mail</label>
+      <label>E-mail *</label>
       <input type="email" [(ngModel)]="email" name="email" required />
     </div>
 
     <div class="form-group">
-      <label>Senha</label>
+      <label>Senha *</label>
       <input type="password" [(ngModel)]="senha" name="senha" required />
+    </div>
+
+    <!-- Bloco de Endereço via API -->
+    <div class="form-group">
+      <label>CEP (Busca automática via API)</label>
+      <input 
+        type="text" 
+        [(ngModel)]="cep" 
+        name="cep" 
+        placeholder="00000-000" 
+        (blur)="buscarCep()" 
+        maxlength="9" 
+      />
+      <small *ngIf="buscandoCep" style="color: #3b82f6;">A consultar ViaCEP...</small>
+    </div>
+
+    <div class="form-group" *ngIf="logradouro">
+      <label>Rua / Logradouro</label>
+      <input type="text" [(ngModel)]="logradouro" name="logradouro" readonly />
+    </div>
+
+    <div style="display: flex; gap: 10px;" *ngIf="cidade">
+      <div class="form-group" style="flex: 2;">
+        <label>Cidade</label>
+        <input type="text" [(ngModel)]="cidade" name="cidade" readonly />
+      </div>
+      <div class="form-group" style="flex: 1;">
+        <label>UF</label>
+        <input type="text" [(ngModel)]="uf" name="uf" readonly />
+      </div>
     </div>
 
     <div class="lgpd-box">
