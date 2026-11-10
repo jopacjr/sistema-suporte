@@ -1,10 +1,11 @@
 <nav class="navbar">
-  <div class="logo">Sistema de Suporte (LGPD)</div>
-  <div class="links">
-    <a routerLink="/login">Login</a>
-    <a routerLink="/cadastro">Cadastro</a>
+  <div class="logo">Sistema de Suporte</div>
+
+  <!-- Exibido apenas quando o usuário estiver LOGADO -->
+  <div class="links" *ngIf="authService.estaLogado$ | async">
     <a routerLink="/chamados">Meus Chamados</a>
     <a routerLink="/novo-chamado" class="btn-novo">+ Novo Chamado</a>
+    <a (click)="sair()" style="cursor: pointer;">Sair</a>
   </div>
 </nav>
 
